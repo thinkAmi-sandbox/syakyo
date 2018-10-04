@@ -20,7 +20,6 @@ class Shortly:
 
     def __init__(self):
         template_path = pathlib.Path('./templates')
-        # TODO Environmentクラスの詳細
         self.jinja_env = Environment(loader=FileSystemLoader(str(template_path)),
                                      autoescape=True)
 
@@ -70,7 +69,6 @@ class Shortly:
         error = None
         url = ''
         if request.method == 'POST':
-            # TODO request.form とは
             url = request.form['url']
             if not is_valid_url(url):
                 error = 'Please enter a valid URL'
